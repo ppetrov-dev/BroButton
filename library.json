@@ -1,0 +1,22 @@
+{
+  "name": "BroButton",
+  "keywords": "button",
+  "description": "Useful Arduino Library for creating C# style buttons",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/ppetrov-dev/BroButton.git"
+  },
+  "authors": 
+  [
+    {
+      "name": "Pavel Petrov",
+      "email": "ppetrov-dev@hotmail.com",
+      "url": "http://www.ppetrov.dev",
+      "maintainer": true
+    }
+  ],
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "*"
+}

@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For BroButton
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+BroTimer	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+AttachOnClick	KEYWORD2
+AttachOnDoubleClick	KEYWORD2
+AttachOnPressStart	KEYWORD2
+AttachOnPressStop	KEYWORD2
+Tick	KEYWORD2
+Init	KEYWORD2
+Reset	KEYWORD2
+SetDebounceTicks	KEYWORD2
+SetClickTicks	KEYWORD2
+SetPressTicks	KEYWORD2
+GetLastPressedTicks	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
