@@ -1,5 +1,5 @@
 #include "BroButton.h"
-#include "State/BroButtonNormalState.h"
+#include "BroButtonStates.h"
 
 BroButton::BroButton(byte pin, bool isActiveLow, bool isPullupActive)
 	: _pin(pin), _isPullupActive(isPullupActive)

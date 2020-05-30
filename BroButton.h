@@ -2,7 +2,7 @@
 #define broRotaryEncoderH
 
 #include "Arduino.h"
-#include "State/BroButtonStateBase.h"
+#include "BroButtonStateBase.h"
 
 class BroButton
 {

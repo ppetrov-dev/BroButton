@@ -1,5 +1,5 @@
-#include "State/BroButtonStateBase.h"
-#include "State/BroButtonNormalState.h"
+#include "BroButtonStateBase.h"
+#include "BroButtonStates.h"
 #include "BroButton.h"
 
 void BroButtonStateBase::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
