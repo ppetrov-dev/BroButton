@@ -22,7 +22,6 @@ class BroButtonStateBase
 
     public:
         virtual void Tick(const bool &isButtonPressed, const unsigned long &milliseconds);
-        virtual void RaiseEventIfNeeded();
         void SetContext(BroButton *context);
 };
 #endif //BroButtonStateBaseH

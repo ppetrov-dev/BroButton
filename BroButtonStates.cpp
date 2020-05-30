@@ -31,22 +31,23 @@ void BroButtonSingleClickCandidateState::Tick(const bool &isButtonPressed, const
             TransitionTo(new BroButtonNormalState());
     }
     else if (IsPressTicksExpired(milliseconds))
-        TransitionTo(new BroButtonLongPressCandidateState());
+    {
+        RaiseLongPressStartIfNotNull();
+        TransitionTo(new BroButtonLongPressStartedState());
+    }
 }
 void BroButtonSingleClickState::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
 {
     if (!ContainsDoubleClickHandler() || IsClickTicksExpired(milliseconds))
-        TransitionTo(new BroButtonSingleClickedState());
+    {
+        RaiseClickIfNotNull();
+        TransitionTo(new BroButtonNormalState());
+    }
     else if (isButtonPressed && IsDebounceExpiredWithStopTime(milliseconds))
     {
         SetStartTime(milliseconds);
         TransitionTo(new BroButtonDoubleClickCandidateState());
     }
-}
-void BroButtonSingleClickedState::RaiseEventIfNeeded()
-{
-    RaiseClickIfNotNull();
-    TransitionTo(new BroButtonNormalState());
 }
 void BroButtonDoubleClickCandidateState::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
 {
@@ -54,13 +55,9 @@ void BroButtonDoubleClickCandidateState::Tick(const bool &isButtonPressed, const
     {
         SetStartTime(milliseconds);
         SetStopTime(milliseconds);
-        TransitionTo(new BroButtonDoubleClickingState());
+        RaiseDoubleClickIfNotNull();
+        TransitionTo(new BroButtonDoubleClickedState());
     }
-}
-void BroButtonDoubleClickingState::RaiseEventIfNeeded()
-{
-    RaiseDoubleClickIfNotNull();
-    TransitionTo(new BroButtonDoubleClickedState());
 }
 void BroButtonDoubleClickedState::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
 {
@@ -69,21 +66,12 @@ void BroButtonDoubleClickedState::Tick(const bool &isButtonPressed, const unsign
     else if (!isButtonPressed)
         TransitionTo(new BroButtonNormalState());
 }
-void BroButtonLongPressCandidateState::RaiseEventIfNeeded()
-{
-    RaiseLongPressStartIfNotNull();
-    TransitionTo(new BroButtonLongPressStartedState());
-}
 void BroButtonLongPressStartedState::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
 {
     if (!isButtonPressed)
     {
         SetStopTime(milliseconds);
-        TransitionTo(new BroButtonLongPressStoppedState());
+        RaiseLongPressStopIfNotNull();
+        TransitionTo(new BroButtonNormalState());
     }
-}
-void BroButtonLongPressStoppedState::RaiseEventIfNeeded()
-{
-    RaiseLongPressStopIfNotNull();
-    TransitionTo(new BroButtonNormalState());
 }

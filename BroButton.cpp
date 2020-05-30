@@ -84,5 +84,4 @@ void BroButton::Tick()
 	auto isButtonPressed = digitalRead(_pin) == _buttonPressedValue;
 	auto currenMillis = millis();
 	_state->Tick(isButtonPressed, currenMillis);
-	_state->RaiseEventIfNeeded();
 }

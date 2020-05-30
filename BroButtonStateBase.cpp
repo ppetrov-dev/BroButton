@@ -5,9 +5,6 @@
 void BroButtonStateBase::Tick(const bool &isButtonPressed, const unsigned long &milliseconds)
 {
 }
-void BroButtonStateBase::RaiseEventIfNeeded()
-{
-}
 void BroButtonStateBase::SetContext(BroButton *context)
 {
     _context = context;
