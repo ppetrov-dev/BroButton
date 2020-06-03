@@ -1,5 +1,5 @@
-#ifndef broRotaryEncoderH
-#define broRotaryEncoderH
+#ifndef BroButtonH
+#define BroButtonH
 
 #include "Arduino.h"
 #include "BroButtonStateBase.h"
@@ -53,4 +53,4 @@ public:
 
 	int GetLastPressedTicks();
 };
-#endif //broRotaryEncoderH
+#endif //BroButtonH
